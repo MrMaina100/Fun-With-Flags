@@ -10,54 +10,72 @@
 </head>
 <body>
 
- <section id="main">   
-      <div class="p-4  flex items-center justify-between bg-black text-white">
-         <h1 class="text-2xl font-semibold uppercase"> Fun with flags </h1>
-      </div>
-   
-   <div class="max-w-7xl mx-auto mt-5">
-      <!-- sort of the search navigation -->
-      
-      <div class="flex flex-col space-y-2 justify-between md:flex-row md:space-y-0 md:space-x-3">
-         <div class="search-bar">
-            <input type="search" name="search" placeholder="Search for a country"
-               class="border border-gray-300 pr-8 h-9 rounded-lg text-sm focus:outline-none placeholder:px-3">
-      
-      
-         </div>
-      
-         <!-- to do ..filter and select continents -->
-      
-      
-      
-      </div>
-      
-      
-      <!-- the countries div holder -->
-      <div class="flex justify-center flex-col space-y-5 mt-8 md:flex-row md:flex-wrap md:space-y-2 md:space-x-5" id="card-container">
+ <div class="container">
+   <nav class="flex  relative">
+      <h1 class="font-bold text-2xl capitalize"> fun with flags</h1>
 
-         <!-- the card go here -->
-      
-         <!-- <div id="card" class="max-w-sm rounded overflow-hidden shadow-2xl ">
-            <img src="" alt="" class="w-full">
-            <div class="px-5 py-4">
-               <h1 class="font-bold text-lg mb-2">Country:</h1>
-      
-               <p>Capital:</p>
-               <p>Population</p>
-               <p>region:</p>
-            </div>
-      
-         </div> -->
-      
+      <div>
+         <!-- drop down menu will go here -->
+
       </div>
+
+      <!-- @to do later the hamburger menu will go here -->
+
+
+
+   </nav>
+
+   <!-- the search bar -->
+   <div class="flex items-center">
+      
+      
+         <input type="search" name="search" id="" class="h-10 border border-gray-300 rounded-xl p-2 outline-none  " placeholder="search">
+
+         <button class=" ml-1 p-2 bg-black border  rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+               class="w-5 h-6 text-white">
+               <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+
+         </button>
+
+         
+      
+
+   </div>
+  
+
+
+   
+
+   <div class="flex flex-col items-center justify-between space-y-8 md:flex-row md:space-y-0 md:space-x-8">
+
+      <!-- the container that holds the info  -->
+      <!-- the card container -->
+
+      <div class="p-6 flex flex-col space-y-4 md:flex-row md:flex-wrap md:space-x-8" id="card-container">
+         <!-- <div class="w-28 h-48">
+            <img src="" alt="" class="w-full ">
+         </div>
+         <div class="flex flex-col mb-2">
+            <h1 class="font-bold text-lg mb-2">Country:</h1>
+            <p>Capital:</p>
+            <p>Region</p>
+            <p>Population</p>
+
+
+         </div> -->
+
+         
+
+      </div>
+
+
+
    </div>
 
-     
- </section>
-
-
- <!-- <button id="p">press</button> -->
+ </div>
    
 </body>
 </html>
