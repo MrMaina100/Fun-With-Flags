@@ -10,7 +10,7 @@ async function fetchApiData(endpoint){
 
    const API_URL = 'https://restcountries.com/v3.1/';
    const res = await fetch(`${API_URL}${endpoint}`);
-   const data = await res.json();
+   const data = await res.json(); 
    console.log(data);
 
    
@@ -26,18 +26,23 @@ async function displayall(){
 
    results.forEach((countries)=>{
       const div = document.createElement('div');
-      div.innerHTML = `
-       <div id="card" class="max-w-sm rounded overflow-hidden shadow-2xl ">       
-        <img src="${countries.flags.png}" alt="" class="w-full  ">        
-         <div class="px-5 py-4">
-            <h1 class="font-bold text-lg mb-2">Country:${countries.name.common}</h1>
 
-            <p>Capital:${countries.capital}</p>
-            <p>Population:${countries.population}</p>
-            <p>region:${countries.region}</p>
-          </div>
+      div.innerHTML=`
+       
+            <img src="${countries.flags.png}" alt="" >
+        
+         <div class="flex flex-col mb-2">
+            <h1 class="font-bold text-lg mb-2">Country:</h1>
+            <p>Capital:</p>
+            <p>Region</p>
+            <p>Population</p>
 
+
+         </div>
+
+       
       `
+      
 
       const card = document.getElementById('card-container');
       card.appendChild(div);
