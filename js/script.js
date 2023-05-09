@@ -1,3 +1,5 @@
+const searchInput = document.querySelector('#search-bar');
+
 const global = {
 
    path:window.location.pathname,
@@ -26,16 +28,17 @@ async function displayall(){
 
    results.forEach((countries)=>{
       const div = document.createElement('div');
+      div.classList.add('mydiv')
 
       div.innerHTML=`
        
             <img src="${countries.flags.png}" alt="" >
         
          <div class="flex flex-col mb-2">
-            <h1 class="font-bold text-lg mb-2">Country:</h1>
-            <p>Capital:</p>
-            <p>Region</p>
-            <p>Population</p>
+            <h1 class="font-bold text-lg mb-2" id="countryName">Country:${countries.name.common}</h1>
+            <p>Capital:${countries.capital}</p>
+            <p>Region:${countries.region}</p>
+            <p>Population:  ${ numberWithCommas(countries.population)} </p>
 
 
          </div>
@@ -60,9 +63,48 @@ async function displayall(){
 
 
 
+// function for the search
+
+function searchFlags(e){
+
+   const text = e.target.value.toLocaleLowerCase();
+   // console.log(text);
+   const ctndiv = document.querySelectorAll('.mydiv')
+   // console.log(ctndiv);
+   ctndiv.forEach((items)=>{
+      // console.log(items)
+      const nameitem = items.querySelector('h1')
+      const newItem = nameitem.textContent.toLocaleLowerCase().replace('country:', '');
+      // console.log(newItem);
+
+      if(newItem.indexOf(text) != -1){
+         items.style.display = 'block'
+      }else{
+
+         items.style.display = 'none'
+
+
+      }
+      
+
+   })
+   
+
+}
+searchInput.addEventListener('input', searchFlags);
 
 
 
+
+
+// function to add commas to a number.
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+}
 
 
 
