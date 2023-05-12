@@ -1,4 +1,5 @@
 const searchInput = document.querySelector('#search-bar');
+const regionDropdown = document.querySelector('#region-dropdown');
 
 const global = {
 
@@ -22,9 +23,22 @@ async function fetchApiData(endpoint){
 
 // function to display all the flags when the page loads.
 
-async function displayall(){
-   const results = await fetchApiData('all');
-   console.log(results);
+async function displayall(region = 'all'){
+   const endpoint = region === 'all' ? 'all': `region/${region}`
+   //in short i said 
+//       let endpoint;
+// if (region === 'all') {
+//   endpoint = 'all';
+// } else {
+//   endpoint = `region/${region}`;
+// }
+      
+   
+   const results = await fetchApiData(endpoint);
+   
+
+   const card = document.getElementById('card-container');
+   card.innerHTML=''; 
 
    results.forEach((countries)=>{
       const div = document.createElement('div');
@@ -92,6 +106,13 @@ function searchFlags(e){
 
 }
 searchInput.addEventListener('input', searchFlags);
+
+
+//function to handle the region drop down;
+regionDropdown.addEventListener('change', (e)=>{
+   const region = e.target.value;
+   displayall(region);
+});
 
 
 
